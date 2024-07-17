@@ -1,0 +1,58 @@
+[
+  {
+    "id": 2,
+    "title": "Pantalon corto mujer",
+    "description": "Pantalon de vestir mujer",
+    "code": "PANT2",
+    "price": 17000,
+    "status": true,
+    "stock": 15,
+    "category": "pantalones",
+    "thumbnails": [
+      "ruta1.jpg",
+      "ruta2.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Remera niño 🧒",
+    "description": "Remera de vestir para niño",
+    "code": "REM3",
+    "price": 9500,
+    "status": true,
+    "stock": 12,
+    "category": "remeras",
+    "thumbnails": [
+      "ruta1.jpg",
+      "ruta2.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Remera hombre",
+    "description": "Remera de vestir para hombre rock",
+    "code": "REM334",
+    "price": 14670,
+    "status": true,
+    "stock": 25,
+    "category": "remeras",
+    "thumbnails": [
+      "ruta1.jpg",
+      "ruta2.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Remera hombre roja",
+    "description": "Remera de vestir para hombre roja",
+    "code": "REM33-ROJ",
+    "price": 162547,
+    "status": true,
+    "stock": 25,
+    "category": "remeras",
+    "thumbnails": [
+      "ruta1.jpg",
+      "ruta2.jpg"
+    ]
+  }
+]

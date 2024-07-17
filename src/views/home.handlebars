@@ -1,0 +1,37 @@
+{{#> main}}
+  <link rel="stylesheet" href="/css/style.css">
+  <h1>Lista de Productos</h1>
+  <ul id="product-list">
+    {{#each products}}
+      <li>
+        <div><span class="label">ID:</span> <span>{{this._id}}</span></div>
+        <div><span class="label">Title:</span> <span>{{this.title}}</span></div>
+        <div><span class="label">Description:</span> <span>{{this.description}}</span></div>
+        <div><span class="label">Code:</span> <span>{{this.code}}</span></div>
+        <div><span class="label">Price:</span> <span>{{this.price}}</span></div>
+        <div><span class="label">Status:</span> <span>{{this.status}}</span></div>
+        <div><span class="label">Stock:</span> <span>{{this.stock}}</span></div>
+        <div><span class="label">Category:</span> <span>{{this.category}}</span></div>
+      </li>
+    {{/each}}
+  </ul>
+  <div class="pagination">
+    {{#if hasPrevPage}}
+      <button id="prev-page" data-page="{{prevPage}}">Anterior</button>
+    {{/if}}
+    {{#if hasNextPage}}
+      <button id="next-page" data-page="{{nextPage}}">Siguiente</button>
+    {{/if}}
+  </div>
+  <script>
+    document.getElementById('prev-page')?.addEventListener('click', function() {
+      const page = this.getAttribute('data-page');
+      window.location.href = `/home?page=${page}`;
+    });
+
+    document.getElementById('next-page')?.addEventListener('click', function() {
+      const page = this.getAttribute('data-page');
+      window.location.href = `/home?page=${page}`;
+    });
+  </script>
+{{/main}}

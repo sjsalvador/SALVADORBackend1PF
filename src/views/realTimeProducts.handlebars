@@ -1,0 +1,40 @@
+{{#> main}}
+  <link rel="stylesheet" href="/css/style.css">
+  <h1>Lista de Productos en Tiempo Real</h1>
+  <ul id="product-list">
+    {{#each products}}
+      <li>
+        <div><span class="label">ID:</span> <span>{{this._id}}</span></div>
+        <div><span class="label">Title:</span> <span>{{this.title}}</span></div>
+        <div><span class="label">Description:</span> <span>{{this.description}}</span></div>
+        <div><span class="label">Code:</span> <span>{{this.code}}</span></div>
+        <div><span class="label">Price:</span> <span>{{this.price}}</span></div>
+        <div><span class="label">Status:</span> <span>{{this.status}}</span></div>
+        <div><span class="label">Stock:</span> <span>{{this.stock}}</span></div>
+        <div><span class="label">Category:</span> <span>{{this.category}}</span></div>
+      </li>
+    {{/each}}
+  </ul>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    socket.on('updateProducts', (products) => {
+      const productList = document.getElementById('product-list');
+      productList.innerHTML = '';
+      products.forEach(product => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <div><span class="label">ID:</span> <span>${product._id}</span></div>
+          <div><span class="label">Title:</span> <span>${product.title}</span></div>
+          <div><span class="label">Description:</span> <span>${product.description}</span></div>
+          <div><span class="label">Code:</span> <span>${product.code}</span></div>
+          <div><span class="label">Price:</span> <span>${product.price}</span></div>
+          <div><span class="label">Status:</span> <span>${product.status}</span></div>
+          <div><span class="label">Stock:</span> <span>${product.stock}</span></div>
+          <div><span class="label">Category:</span> <span>${product.category}</span></div>
+        `;
+        productList.appendChild(li);
+      });
+    });
+  </script>
+{{/main}}
